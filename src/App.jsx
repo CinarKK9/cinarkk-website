@@ -3,7 +3,7 @@ function App() {
     <>
     <h1>CinarKK</h1>
     <p>Useless website...</p>
-    please give me ideas
+    <p>please give me ideas</p>
     </>
   )
 }
