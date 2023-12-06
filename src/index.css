@@ -63,12 +63,16 @@ nav a:hover {
 }
 
 .ideas {
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(1, 83, 156);
     padding: 1rem;
     border-radius: 10px;
-    width: 50%;
+    width: 90%;
     transition: .3s;
     margin-bottom: 1rem;
+}
+
+.ideas *{
+    color: #fff;
 }
 
 .ideas:hover {
