@@ -8,7 +8,7 @@ function LiveChat() {
     if(!user) {
         return (
             <div>
-            <h1>Live Chat (in development. nothing happens when you sign in)</h1>
+            <h1>Live Chat (in development)</h1>
             <p>Now you can discuss ideas with other people. <u>Live.</u></p>
             <p>You must sign in to chat with others</p>
             <button onclick={signInWithGoogle}>Sign in with google</button>
