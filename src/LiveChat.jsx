@@ -5,12 +5,14 @@ const provider = new GoogleAuthProvider();
 
 function LiveChat() {
     const user = auth.currentUser
-    
-
-    return(
-        <>
-            <h1></h1>
-        </>
+    if(!user) {
+        <div>
+            <h1>Live Chat</h1>
+            <p>Now you can discuss ideas with other people. <u>Live.</u></p>
+            <p>You must sign in to chat with others</p>
+            <button onclick={signInWithGoogle}>Sign in with google</button>
+</div>
+    }
     )
 }
 
