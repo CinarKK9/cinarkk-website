@@ -13,7 +13,6 @@ function LiveChat() {
             <button onclick={signInWithGoogle}>Sign in with google</button>
         </div>
     }
-    )
 }
 
 function signInWithGoogle() {
