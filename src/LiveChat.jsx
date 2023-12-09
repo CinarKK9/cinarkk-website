@@ -11,7 +11,7 @@ function LiveChat() {
             <p>Now you can discuss ideas with other people. <u>Live.</u></p>
             <p>You must sign in to chat with others</p>
             <button onclick={signInWithGoogle}>Sign in with google</button>
-</div>
+        </div>
     }
     )
 }
