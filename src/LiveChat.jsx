@@ -7,7 +7,7 @@ function LiveChat() {
     const user = auth.currentUser
     if(!user) {
         return (
-            <div style={{display: 'flex', flex-direction: 'column', align-items: 'center'}}>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <h1>Live Chat (in development)</h1>
             <p>Now you can discuss ideas with other people. <u>Live.</u></p>
             <p>You must sign in to chat with others</p>
