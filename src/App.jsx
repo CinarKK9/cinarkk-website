@@ -5,7 +5,7 @@ function App() {
       <h1>CinarKK</h1>
       <p>Useless website...</p>
       <p>please give me ideas</p>
-      <p style={{text-align: 'center'}}><b>NOTE: This site is NOT an IP grabber. It's against the AWS ToS.</b></p>
+      <p style={{textAlign: 'center'}}><b>NOTE: This site is NOT an IP grabber. It's against the AWS ToS.</b></p>
       <a href="/add-ideas"><button>Add ideas here</button></a>
     </main>
     </>
