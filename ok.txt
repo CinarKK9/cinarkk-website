@@ -1,0 +1,11 @@
+if(!user) {
+        return(
+            <>
+                <div style={{textAlign: 'center'}}>
+                    <h1>Live Chat</h1>
+                    <p>Sign in to discuss ideas with other users here</p>
+                    <button onClick={signInWithGoogle}>Sign in With Google</button>
+                </div>
+            </>
+        )
+    }

@@ -5,6 +5,7 @@ import AddIdeas from './AddIdeas';
 import App from './App';
 import Navbar from './Navbar';
 import Ideas from './Ideas'
+import LiveChat from './LiveChat'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/add-ideas',
     element: [<Navbar />, <AddIdeas />]
+  },
+  {
+    path: '/live-chat',
+    element: [<Navbar />, <LiveChat />]
   }
 ]);
 
