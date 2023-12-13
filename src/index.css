@@ -62,6 +62,18 @@ nav ul {
     justify-content: space-evenly;
 }
 
+input, textarea {
+    border-radius: 7px;
+    padding: 0.5rem;
+    border: 1px solid rgb(155, 155, 155);
+    outline: none;
+    transition: .4s;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid #000
+}
+
 nav a:hover {
     background-color: #c2c2c253;
 }

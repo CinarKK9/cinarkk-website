@@ -1,18 +1,18 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
-const auth = getAuth();
-
 function LiveChat() {
 
     return(
         <>
-            <h1></h1>
+            <div style={{textAlign: "center"}}>
+                <h1>Live Chat (under maintenance)</h1>
+                <p>Chat with other people live to discuss ideas.</p>
+            </div>
+            <div className="chat"></div>
         </>
     )
 }
 
 function signInToLiveChat() {
-    signInWithEmailAndPassword(auth)
+    
 }
 
 export default LiveChat
