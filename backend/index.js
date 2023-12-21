@@ -1,20 +1,44 @@
-const app = require('express')()
-const axios = require('axios')
+import React, { useState, useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
-app.get('/api/biteKey', (req, res) => {
-    const mail = req.query.email
-    const UID = req.query.uid
-    
+const YourComponent = () => {
+  const history = useHistory();
+  const location = useLocation();
+  const [apiResponse, setApiResponse] = useState(null);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const mail = searchParams.get('searchKeyByEMail');
+    const UID = searchParams.get('searchKeyByUID');
+
     if (!UID && !mail) {
-        return res.status(400).send('enter uid or email');
+      return (
+        <>
+        <pre>provide email or uid</pre> 
+        </>
+      )
     }
-    axios.get(`https://biteyt.xyz/api?searchKeyBy${UID ? `UID=${UID}` : `Email=${mail}`}`).then((response) => {
-        res.send(response.data)
-    }).catch((err) => {
-        res.status(500).send(err)
-    });
-})
 
-app.listen(3000, () => {
-    console.log('API IS WORKING IN PORT 3000')
-})
+    const url = `https://biteyt.xyz/api?searchKeyBy${UID ? `UID=${UID}` : `EMail=${mail}`}`;
+
+    axios.get(url)
+      .then((response) => {
+        setApiResponse(response.data);
+      })
+      .catch((err) => {
+        setApiResponse(err);
+      });
+
+  }, [location.search]);
+
+  return (
+    <div>
+      {apiResponse && (
+        <pre>{JSON.stringify(apiResponse, null, 2)}</pre>
+      )}
+    </div>
+  );
+};
+
+export default YourComponent;
