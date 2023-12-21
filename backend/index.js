@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-const YourComponent = () => {
+const BiteKeyAPI = () => {
   const history = useHistory();
   const location = useLocation();
   const [apiResponse, setApiResponse] = useState(null);
@@ -41,4 +41,4 @@ const YourComponent = () => {
   );
 };
 
-export default YourComponent;
+export default BiteKeyAPI;

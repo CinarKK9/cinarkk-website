@@ -11,6 +11,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NotFound from './404';
+import BiteKeyAPI from '../backend';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: '/live-chat',
     element: [<Navbar />, <LiveChat />]
+  },
+  {
+    path: '/api/BiteKey',
+    element: <BiteKeyAPI />
   }
 ]);
 
