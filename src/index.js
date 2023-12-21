@@ -11,7 +11,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NotFound from './404';
-import BiteKeyAPI from '../backend';
+import BiteKeyAPI from './backend';
 
 const router = createBrowserRouter([
   {
