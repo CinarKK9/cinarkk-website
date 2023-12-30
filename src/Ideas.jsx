@@ -22,7 +22,7 @@ function Ideas() {
 
     useEffect(() => {
         getIdeas()
-    })
+    }, [])
 
     if(loading) return (
         <h1>Loading...</h1>
