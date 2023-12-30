@@ -7,7 +7,7 @@ function Navbar() {
                     <ul>
                         
                         <li><a href="/ideas">Ideas</a></li>
-                        <li><a href="/live-chat">Live Chat</a></li>
+                        <li><a href="/clicker-game">Clicker Game</a></li>
                     </ul>
                 </nav>
             </header>

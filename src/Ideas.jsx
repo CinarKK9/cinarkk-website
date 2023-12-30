@@ -22,7 +22,7 @@ function Ideas() {
 
     useEffect(() => {
         getIdeas()
-    }, [])
+    })
 
     if(loading) return (
         <h1>Loading...</h1>
@@ -32,7 +32,7 @@ function Ideas() {
             <main>
                 <h1>Ideas of People</h1>
                 {ideas.map((idea) => (
-                    <div className='ideas' key={idea.id}>
+                    <div className='ideas' key={idea.timestamp.seconds / 1000}>
                         <div className='idea-card'>
                             <h2 className='idea-title'>{idea.ideaTitle}</h2>
                             <p className='idea-main'>{idea.userIdea}</p>

@@ -11,6 +11,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NotFound from './404';
+import ClickerGame from './ClickerGame';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: '/live-chat',
     element: [<Navbar />, <LiveChat />]
+  },
+  {
+    path: '/clicker-game',
+    element: [<Navbar />, <ClickerGame />]
   }
 ]);
 

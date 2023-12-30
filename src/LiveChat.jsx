@@ -11,8 +11,4 @@ function LiveChat() {
     )
 }
 
-function signInToLiveChat() {
-    
-}
-
 export default LiveChat
