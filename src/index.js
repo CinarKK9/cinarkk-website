@@ -1,39 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import AddIdeas from './AddIdeas';
-import App from './App';
-import Navbar from './Navbar';
-import Ideas from './Ideas'
-import LiveChat from './LiveChat'
+import AddMod from './AddMod';
+import Index from './Index.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import NotFound from './404';
-import ClickerGame from './ClickerGame';
 
 const router = createBrowserRouter([
   {
-    errorElement: [<Navbar />, <NotFound />],
+    errorElement: <NotFound />,
     path: "/",
-    element: [<Navbar />, <App />],
+    element: <Index />,
   },
   {
-    path: "/ideas",
-    element: [<Navbar />, <Ideas />],
-  },
-  {
-    path: '/add-ideas',
-    element: [<Navbar />, <AddIdeas />]
-  },
-  {
-    path: '/live-chat',
-    element: [<Navbar />, <LiveChat />]
-  },
-  {
-    path: '/clicker-game',
-    element: [<Navbar />, <ClickerGame />]
+    path: "/add-mod",
+    element: <AddMod />
   }
 ]);
 
