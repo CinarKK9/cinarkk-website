@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import AddMod from './AddMod';
-import Index from './Index.jsx'
+import App from './App'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   {
     errorElement: <NotFound />,
     path: "/",
-    element: <Index />,
+    element: <App />,
   },
   {
     path: "/add-mod",
