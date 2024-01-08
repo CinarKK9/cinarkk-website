@@ -13,6 +13,16 @@ body {
     padding: 0;
 }
 
+.file-uploader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#sign-out {
+    margin-bottom: 2rem;
+}
+
 .container {
     display: flex;
     justify-content: center;

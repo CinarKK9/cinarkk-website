@@ -1,13 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { database } from './firebase'
-import { signInWithEmailAndPassword } from "firebase/auth"
+import { signInWithEmailAndPassword, signOut } from "firebase/auth"
 import swal from "sweetalert"
 import './index.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import AddMod from "./AddMod"
 
 function App() {
-    const [login, setLogin] = useState(false)
+    const [user, setUser] = useState(null);
 
+    useEffect(() => {
+        const unsubscribe = database.onAuthStateChanged((user) => {
+        setUser(user);
+        });
 
+        return () => unsubscribe();
+    }, []);
+        
     const SignIn = () => {
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('')
@@ -22,14 +31,22 @@ function App() {
     
     const AdminDashboard = () => {
         return(
-            <ul><li><a href="/add-mod">Upload Mod Library</a></li></ul>
+            <>
+                <button id="sign-out" onClick={() => {signOut(database); setUser(null)}}>Sign Out</button>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" exact Component={AddMod}/>
+                    </Routes>
+                </BrowserRouter>
+            </>
+
         )
     }
 
     const handleSignIn = (email, password) => {
-        signInWithEmailAndPassword(database, email, password).then(() => {
+        signInWithEmailAndPassword(database, email, password).then((user) => {
             swal("Login Successful!", `Logged in as ${email}`, "success")
-            setLogin(true)
+            setUser(user)
         }).catch((err) => {
             swal("Error", `${err.code}`, "error")
         })
@@ -38,7 +55,7 @@ function App() {
     return(
         <>
             <h1>Welcome to the Admin Panel of Bitemod</h1>
-            <div className="container">{login ? <AdminDashboard /> : <SignIn />}</div>
+            <div className="container">{user ? <AdminDashboard /> : <SignIn />}</div>
         </>
     )
 }
