@@ -1,6 +1,7 @@
 import { useState } from "react"
 import firebase from "./firebase"
 import { getFirestore, addDoc, collection, serverTimestamp } from "firebase/firestore"
+import swal from 'sweetalert'
 
 function AddIdeas() {
     const [ideaTitle, setIdeaTitle] = useState('')
@@ -11,8 +12,14 @@ function AddIdeas() {
     const ref = collection(db, "ideas")
 
     async function createIdea() {
-        await addDoc(ref, {ideaTitle: ideaTitle, userIdea: idea, userName: ideaUserName, userDcName: ideaDcUserName, timestamp: serverTimestamp()})
-        await window.location.reload()
+        await addDoc(ref, {ideaTitle: ideaTitle, userIdea: idea, userName: ideaUserName, userDcName: ideaDcUserName, timestamp: serverTimestamp()}).then((result) => {
+            swal("Idea Added Successfully", `${ideaTitle}`, "success" ).then(() => {
+                window.location.reload()
+            })
+        }).catch((err) => {
+            swal("Could not add idea :(", `${err}`, "error");
+        });
+
     }
 
     return(

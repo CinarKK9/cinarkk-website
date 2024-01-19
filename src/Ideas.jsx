@@ -22,6 +22,7 @@ function Ideas() {
 
     useEffect(() => {
         getIdeas()
+        //eslint-disable-next-line
     }, [])
 
     if(loading) return (
