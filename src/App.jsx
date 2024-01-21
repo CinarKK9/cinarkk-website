@@ -18,7 +18,7 @@ function App() {
       1,
       1000
     );
-    camera.position.z = 96;
+    camera.position.z = 175;
 
     //get canvas and create renderer
     const canvas = document.querySelector(".canvas");
@@ -46,7 +46,7 @@ function App() {
     scene.add(sphere3Mesh)
 
     //create a box
-    const torusGeometry = new THREE.BoxGeometry(32, 32, 32);
+    const torusGeometry = new THREE.BoxGeometry(24, 24, 24);
     const torusMaterial = new THREE.MeshNormalMaterial()
     const torusMesh = new THREE.Mesh(torusGeometry, torusMaterial);
     scene.add(torusMesh)
