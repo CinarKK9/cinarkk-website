@@ -35,20 +35,22 @@ function ClickerGame() {
   }
   return (
     <>
+     <main>
       <h1 style={{textAlign: "center"}}>Clicker Game {country}</h1>
-      <div className="gameContainer">
-        <div>
-          <span>Points per Click: {levelClickMultiplier} | </span>
-          <span>Level Up Cost: {levelUpCost}</span>
+        <div className="gameContainer">
+          <div>
+            <span>Points per Click: {levelClickMultiplier} | </span>
+            <span>Level Up Cost: {levelUpCost}</span>
+          </div>
+          <h2>Level: {level}</h2>
+          <span>{err}</span>
+          <h1 className={err ? 'error clicker' : ''}>Points: {clickCount}</h1>
+          <div>
+            <button onClick={handleClick}>Click</button>
+            <button onClick={handleLevelUp}>Level Up</button>
+          </div>
         </div>
-        <h2>Level: {level}</h2>
-        <span>{err}</span>
-        <h1 className={err ? 'error clicker' : ''}>Points: {clickCount}</h1>
-        <div>
-          <button onClick={handleClick}>Click</button>
-          <button onClick={handleLevelUp}>Level Up</button>
-        </div>
-      </div>
+     </main>
     </>
   );
 }

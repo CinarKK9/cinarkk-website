@@ -17,7 +17,7 @@ function Navbar() {
 
   const [isFocused, setIsFocused] = useState(false)
   return (
-    <header>
+    <header className="header">
       {isSmallScreen ? (
         <>
           <nav>
